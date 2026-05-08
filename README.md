@@ -56,3 +56,15 @@ Aktuell führe ich dieses Repository **alleine**. Wenn dich eines der Konzepte i
 ## Lizenz / License
 
 CC BY-NC 4.0 — Namensnennung, nicht-kommerziell. Mit der Nennung von **Franz Zollner** als Autor und der Verlinkung auf dieses Repository sind freie Verwendung, Bearbeitung und Verteilung im nicht-kommerziellen Kontext erlaubt.
+
+---
+
+## ☕ Unterstützen / Support
+
+Diese Repositorys werden als unabhängige Forschung privat finanziert (KI-API-Zugänge, Hosting, Fachliteratur). Wer es unterstützen möchte:
+
+> *These repositories are privately funded as independent research (AI API access, hosting, scientific literature). If you'd like to support:*
+
+- **[Ko-fi](https://ko-fi.com/rftprojekt)** — einmalig oder regelmäßig / one-off or recurring
+- **[PayPal](https://www.paypal.me/rftprojekt)** — direkt / direct
+- 📧 **rft.projekt@posteo.de** — Kontakt für Mitwirkung und kommerzielle Anfragen / collaboration & commercial enquiries
