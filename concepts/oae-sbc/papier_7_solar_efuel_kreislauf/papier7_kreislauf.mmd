@@ -1,0 +1,25 @@
+flowchart TB
+    Sun[☀ Solarenergie<br/>PV-Anlage]
+    Surplus{Spitzenproduktion<br/>> Bedarf?}
+    PtL[⚗ Power-to-Liquid<br/>eFuel-Synthese]
+    Tank1[(🛢 eFuel-Tank<br/>chemischer Speicher)]
+    KW[🔥 Heizkraftwerk<br/>Verbrennung]
+    Heat[🏠 Wärme + Strom<br/>für Verbraucher]
+    CO2[💨 CO₂-Abgas<br/>aufgefangen]
+    Tank2[(🛢 CO₂-Tank<br/>Rohstoff-Speicher)]
+
+    Sun --> Surplus
+    Surplus -->|JA| PtL
+    Surplus -->|NEIN| Heat
+    Tank2 --> PtL
+    PtL --> Tank1
+    Tank1 --> KW
+    KW --> Heat
+    KW --> CO2
+    CO2 --> Tank2
+
+    style Sun fill:#FFE680
+    style PtL fill:#A0D8FF
+    style KW fill:#FFC0A0
+    style Tank1 fill:#E0E0E0
+    style Tank2 fill:#E0E0E0
