@@ -22,6 +22,16 @@ Es ist kein Lehrbuch und kein Forschungsprogramm. Es ist eine **strukturierte Sa
 - **Plasma-Linearmotor-Hybridantrieb** — aktive Reduktion des Luftwiderstands durch Bug-Ionisierung + Ladungstrennung + Linearmotor-Beschleunigung der Atomrümpfe
 - **Laser-Induziertes Gas-Ätzen (LACE)** — kaltes Ätzen von Nanostrukturen via Laserstrahl als lokaler Aktivator (historisches Konzept ~2011)
 
+### ⚡ OAE-SBC — Opto-Akustischer Edge-KI-Beschleuniger (`/concepts/oae-sbc`)
+**7-teilige Konzeptreihe** für einen autarken, verlustfreien 100+ TOPS Parallel-Prozessor unter 50W:
+- **[Papier 1](concepts/oae-sbc/papier_1_quartzglas_backplane/papier_1_quartzglas_backplane.md)** — Quartzglas-Backplane mit Totalreflexion (TIR)
+- **[Papier 2](concepts/oae-sbc/papier_2_wdm_broadcast/papier_2_wdm_broadcast.md)** — 3-Farben WDM-Broadcast
+- **[Papier 3](concepts/oae-sbc/papier_3_quantum_dot_dimples/papier_3_quantum_dot_dimples.md)** — Quantum-Dot-Inkjet-Dimples (additive Auskoppler)
+- **[Papier 4](concepts/oae-sbc/papier_4_soa_inseln/papier_4_soa_inseln.md)** — Optisch gepumpte SOA-Inseln (Signal-Regeneration)
+- **[Papier 5](concepts/oae-sbc/papier_5_akusto_optische_switches/papier_5_akusto_optische_switches.md)** — Akusto-optische Switches (Sohler-Prinzip)
+- **[Papier 6](concepts/oae-sbc/papier_6_self_contained_topologie/papier_6_self_contained_topologie.md)** — Self-Contained-Topologie (Synthese)
+- **[Papier 7](concepts/oae-sbc/papier_7_solar_efuel_kreislauf/papier_7_solar_efuel_kreislauf.md)** — Solar-eFuel-Kreislaufwirtschaft (Energie-Kopplung)
+
 ### 🔬 Optik & Energie (`/optics-and-energy`)
 - **Resonante Volumen-Hologramme & Ersatzlinsen** — diffraktive Optiken mit Coulomb-Kraft-Resonanzkopplung für autonome optoakustische Brennweiten-Anpassung (Anwendung: Intraokularlinsen)
 - **Magnetokalorisches Energiemanagement** — Heizung/Kühlung ohne Kompressor oder Gas, langlebig und lautlos
