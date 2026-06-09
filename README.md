@@ -18,24 +18,40 @@ Es ist kein Lehrbuch und kein Forschungsprogramm. Es ist eine **strukturierte Sa
 
 ## Inhalts-Bereiche / Topic Areas
 
+### 📦 3D-Barcode — Data as Images (`/3d_barcode`)
+
+*Original idea Q4 2024 — emerged from a practical limitation of early AI models.*
+
+Any binary file (ZIP, code, executables) encoded as pixel arrays in PNG images — 100% lossless, serverless, air-gapped. The **security dimension**: a harmless PNG bypasses every firewall that checks code but ignores visual noise. The hidden payload extracts locally.
+
+→ **[→ 3D-Barcode README](3d_barcode/README.md)** — includes live demo payloads you can actually decode.
+
+![Demo Overview](3d_barcode/example/composite_demo.png)
+
+---
+
 ### 🛠️ Physik & Hardware (`/physics-and-propulsion`)
 - **Plasma-Linearmotor-Hybridantrieb** — aktive Reduktion des Luftwiderstands durch Bug-Ionisierung + Ladungstrennung + Linearmotor-Beschleunigung der Atomrümpfe
 - **Laser-Induziertes Gas-Ätzen (LACE)** — kaltes Ätzen von Nanostrukturen via Laserstrahl als lokaler Aktivator (historisches Konzept ~2011)
 
-### ⚡ OAE-SBC — Opto-Akustischer Edge-KI-Beschleuniger (`/concepts/oae-sbc`)
-**7-teilige Konzeptreihe** für einen autarken, verlustfreien 100+ TOPS Parallel-Prozessor unter 50W:
-- **[Papier 1](concepts/oae-sbc/papier_1_quartzglas_backplane/papier_1_quartzglas_backplane.md)** — Quartzglas-Backplane mit Totalreflexion (TIR)
-- **[Papier 2](concepts/oae-sbc/papier_2_wdm_broadcast/papier_2_wdm_broadcast.md)** — 3-Farben WDM-Broadcast
-- **[Papier 3](concepts/oae-sbc/papier_3_quantum_dot_dimples/papier_3_quantum_dot_dimples.md)** — Quantum-Dot-Inkjet-Dimples (additive Auskoppler)
-- **[Papier 4](concepts/oae-sbc/papier_4_soa_inseln/papier_4_soa_inseln.md)** — Optisch gepumpte SOA-Inseln (Signal-Regeneration)
-- **[Papier 5](concepts/oae-sbc/papier_5_akusto_optische_switches/papier_5_akusto_optische_switches.md)** — Akusto-optische Switches (Sohler-Prinzip)
-- **[Papier 6](concepts/oae-sbc/papier_6_self_contained_topologie/papier_6_self_contained_topologie.md)** — Self-Contained-Topologie (Synthese)
-- **[Papier 7](concepts/oae-sbc/papier_7_solar_efuel_kreislauf/papier_7_solar_efuel_kreislauf.md)** — Solar-eFuel-Kreislaufwirtschaft (Energie-Kopplung)
+### ⚡ Photonic Edge AI Accelerator (`/photonic-edge-accelerator`)
 
-### 🔬 Optik & Energie (`/optics-and-energy`)
-- **Resonante Volumen-Hologramme & Ersatzlinsen** — diffraktive Optiken mit Coulomb-Kraft-Resonanzkopplung für autonome optoakustische Brennweiten-Anpassung (Anwendung: Intraokularlinsen)
-- **Magnetokalorisches Energiemanagement** — Heizung/Kühlung ohne Kompressor oder Gas, langlebig und lautlos
-- **Photonisches Temperaturmanagement** — selektive Emitter via Oberflächenstrukturen für passive Gebäudetemperierung
+**7-paper concept series** for a self-contained, lossless 100+ TOPS parallel processor under 50W —
+built from photonic interconnects (light instead of copper) inside a quartz-glass backplane:
+
+- **[Paper 1](photonic-edge-accelerator/papier_1_quartzglas_backplane/papier_1_quartzglas_backplane.md)** — Quartz-Glass Backplane with Total Internal Reflection (TIR)
+- **[Paper 2](photonic-edge-accelerator/papier_2_wdm_broadcast/papier_2_wdm_broadcast.md)** — 3-Color WDM Broadcast (RAM-to-NPU Multicast)
+- **[Paper 3](photonic-edge-accelerator/papier_3_quantum_dot_dimples/papier_3_quantum_dot_dimples.md)** — Quantum-Dot Inkjet Dimples (additive outcouplers)
+- **[Paper 4](photonic-edge-accelerator/papier_4_soa_inseln/papier_4_soa_inseln.md)** — Optically Pumped SOA Islands (signal regeneration)
+- **[Paper 5](photonic-edge-accelerator/papier_5_akusto_optische_switches/papier_5_akusto_optische_switches.md)** — Acousto-Optic Switches (Sohler principle, LiNbO₃)
+- **[Paper 6](photonic-edge-accelerator/papier_6_self_contained_topologie/papier_6_self_contained_topologie.md)** — Self-Contained Accelerator Topology (synthesis)
+- **[Paper 7](photonic-edge-accelerator/papier_7_solar_efuel_kreislauf/papier_7_solar_efuel_kreislauf.md)** — Solar-eFuel Energy Loop (energy coupling)
+
+### 🔬 Optik & Energie (`/ideas`)
+- **[Holographic Eye Lens Replacement](ideas/holographic-eye-lens/README.md)** — Resonante Volumen-Hologramme als Ersatz für Kunstlinsen beim Grauen Star. Spektral-selektive Holografie statt fester Brennweite — Farbfehler-Korrektur durch diffraktive Apertur.
+- **[Micro Power Plant Concept](ideas/micro-powerplant-solar-bhkw/README.md)** — Dezentrale BHKW + Solar-eFuel-Kombination für vollständige Energieautarkie im 1-5 kW Haushaltsmaßstab.
+- **Magnetokalorisches Energiemanagement** — Heizung/Kühlung ohne Kompressor oder Gas, langlebig und lautlos *(concept in progress)*
+- **Photonisches Temperaturmanagement** — selektive Emitter via Oberflächenstrukturen für passive Gebäudetemperierung *(concept in progress)*
 
 ### 🧭 Kybernetik & Markt (`/cybernetics-and-market`)
 - **RFT-System (Sentiment-Market-AI)** — der Aktienmarkt als „Nervensystem" der Gesellschaft. Extraktion globaler Stimmungsdaten zur Erkennung kollektiver emotionaler Feedback-Loops und antizyklischer Investitionsempfehlung. *(In aktiver Implementation als „Börsen-KI".)*

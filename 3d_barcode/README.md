@@ -51,11 +51,44 @@ Firewalls check code. Antivirus scanners check metadata and file signatures. **T
 
 The architecture enables a classic **Two-Part Attack**:
 1. A harmless-looking image payload bypasses every security protocol undetected
-2. A local decoder extracts the hidden executable
+2. A local decoder (a trivial 30-line Python script) extracts the hidden executable
 
 The code doesn't care what it encodes — a `.txt`, a `.zip`, or a `.exe`. It's raw bytes either way.
 
 > *We are so focused on securing network protocols that we forget: massive data payloads can bypass the system simply by existing as visible light on a screen.*
+
+### Why current security tools miss it
+
+| Scan type | What it checks | Does it catch this? |
+|---|---|---|
+| Antivirus signature scan | Known malware byte-patterns | ❌ — data is zlib-compressed, unrecognizable |
+| File extension filter | `.exe`, `.js`, `.zip` extensions | ❌ — file is a valid `.png` |
+| MIME-type inspection | `image/png` header | ❌ — header is correct and valid |
+| Pixel content heuristics | Unusual noise patterns | ⚠️ — possible, but not standard |
+| CRC/metadata audit | Embedded metadata fields | ❌ — payload is in pixel data, not metadata |
+| Sandbox execution | Runs the file to detect behavior | ❌ — a PNG image does nothing when opened |
+
+### The Attack Surface
+
+**Scenario A — Email attachment:** A corporate mail gateway scans all `.exe`, `.zip`, and `.js` files. A PNG image sails through. Recipient runs the decoder locally (which looks like a tiny image-viewer script), extracts the payload.
+
+**Scenario B — Chat platforms / Slack / Teams:** Platforms compress and re-encode JPEGs but often store PNG files losslessly. An attacker uploads an encoded PNG. Anyone with the decoder script can reconstruct the payload from the downloaded image.
+
+**Scenario C — Air-gapped systems:** A facility with no USB ports, no internet, but with a screen. An operator photographs a displayed image with a phone. The phone extracts the payload offline. This bypasses **physical** security perimeters.
+
+**Scenario D — Social media as a dead-drop:** Post an image to a public social media account. Anyone knowing the channel can download and decode. The image looks like abstract art. The "server" is Instagram.
+
+### The defense
+
+There is no clean technical defense. The encoding is mathematically indistinguishable from JPEG noise or random textures at the pixel level.
+
+**Mitigation approaches:**
+- **Pixel entropy analysis:** measure local entropy in suspicious images — flat entropy across the whole image is unusual for photographs. A 3D-Barcode image has ~8 bits/pixel uniformly. Standard photos vary by region.
+- **Statistical frequency analysis:** the byte histogram of a 3D-encoded image is nearly flat (uniform distribution). Photograph histograms have peaks.
+- **Whitelist-only image sources:** only accept images from pre-approved domains — prevents dead-drop channels.
+- **Strip PNG files to JPEG on intake:** JPEG compression destroys the pixel-exact encoding. A lossy JPEG conversion with quality <95% will corrupt the payload. Upside: trivially deployable. Downside: data integrity loss for legitimate imagery.
+
+> The encoder described here is transparent, open-source, and published precisely so that **security teams can test their own defenses against it.** The decoder is 30 lines of Python. If your current infrastructure cannot detect it, that is worth knowing before a real attacker discovers the gap.
 
 This dual-use nature makes it a brilliant off-grid tool **and** a serious security blind spot worth understanding.
 
@@ -119,7 +152,12 @@ It's conceptually close to optical or quantum computing — using wave interfere
 
 ## Live Demo — Three Real Payloads
 
-These are not placeholder images. Each PNG below contains actual data you can decode:
+These are not placeholder images. Each PNG below contains actual data you can decode.
+
+**Overview — all three in one image (left: fireworks script, bottom center: GitHub QR, top right: code bundle):**
+
+![Demo Composite](example/composite_demo.png)
+
 
 | Image | Contains | Size |
 |---|---|---|
